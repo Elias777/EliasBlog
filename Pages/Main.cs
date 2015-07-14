@@ -15,12 +15,12 @@ namespace EliasBlog.Pages
         }
         public override string TemplateAddr
         {
-            get { return null; }
+            get { return "Main.html"; }
         }
 
         public override bool Init(Client client)
         {
-            client.HttpSend("Hello!");
+            client.HttpSend(TemplateActivator.Activate(this, client));
             return true;
         }
     }
